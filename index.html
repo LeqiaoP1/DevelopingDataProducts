@@ -1,148 +1,134 @@
-<!DOCTYPE html>
-<html>
+<!DOCTYPE HTML>
+<html lang="en-US">
 <head>
-  <title>Shiny App with linear regression model</title>
-  <meta charset="utf-8">
-  <meta name="description" content="Shiny App with linear regression model">
-  <meta name="author" content="plq2013 (student of data science specification @ coursera)">
-  <meta name="generator" content="slidify" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta http-equiv="X-UA-Compatible" content="chrome=1">
-  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
-  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
-    media="only screen and (max-device-width: 480px)" >
-  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
-  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
-  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  <link rel=stylesheet href="./assets/css/ribbons.css"></link>
+	<title>Shiny App with Linear Regression Model</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=1274, user-scalable=no">
+	<meta name="description" content="Shiny App with Linear Regression Model">
+	<meta name="author" content="plq2013 (student of data science specification @ coursera)">
+	<meta name="generator" content="slidify" />
+	<!-- LOAD STYLE SHEETS -->
+	<link rel="stylesheet" href="libraries/frameworks/shower/themes/ribbon/styles/screen.css">
+	<link rel="stylesheet" media="print"
+	  href="libraries/frameworks/shower/themes/ribbon/styles/print.css">
+	<link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css">  <link rel="stylesheet" href = "assets/css/ribbons.css">
 
-  
-  <!-- Grab CDN jQuery, fall back to local if offline -->
-  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
-  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
-  <script data-main="libraries/frameworks/io2012/js/slides" 
-    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
-  </script>
-  
-  
-
+	<!--
+		To apply styles to the certain slides
+		use slide ID to get needed elements
+		-->
+	<style>
+		#Cover h2 {
+      margin:65px 0 0;
+			color:#FFF;
+			text-align:center;
+			font-size:70px;
+			}
+		#FitToWidth h2,
+		#FitToHeight h2 {
+			color:#FFF;
+			text-align:center;
+			}
+	</style> 
 </head>
-<body style="opacity: 0">
-  <slides class="layout-widescreen">
-    
-    <!-- LOGO SLIDE -->
-        <slide class="title-slide segue nobackground">
-  <hgroup class="auto-fadein">
-    <h1>Shiny App with linear regression model</h1>
-    <h2>course project of &quot;developing data product&quot;</h2>
-    <p>plq2013 (student of data science specification @ coursera)<br/></p>
-  </hgroup>
-  <article></article>  
-</slide>
-    
-
-    <!-- SLIDES -->
-    <slide class="" id="slide-1" style="background:;">
-  <hgroup>
-    <h2>Read-And-Delete</h2>
-  </hgroup>
-  <article data-timings="">
-    <ol>
-<li>Edit YAML front matter</li>
-<li>Write using R Markdown</li>
-<li>Use an empty line followed by three dashes to separate slides!</li>
-</ol>
-
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-2" style="background:;">
-  <hgroup>
-    <h2>Slide 2</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-3" style="background:;">
-  <hgroup>
-    <h2>Slide 3</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-4" style="background:;">
-  <hgroup>
-    <h2>Slide 4</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-<slide class="" id="slide-5" style="background:;">
-  <hgroup>
-    <h2>Slide 5</h2>
-  </hgroup>
-  <article data-timings="">
-    
-  </article>
-  <!-- Presenter Notes -->
-</slide>
-
-    <slide class="backdrop"></slide>
-  </slides>
-  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+<body class="list">
+  <header class="caption">
+  	<h1>Shiny App with Linear Regression Model</h1>
+	</header>
+  <section class="slide " id="slide-1">
+  <div>
+    <h2>Introduction</h2>
     <ul>
-      <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=1 title='Read-And-Delete'>
-         1
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=2 title='Slide 2'>
-         2
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=3 title='Slide 3'>
-         3
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=4 title='Slide 4'>
-         4
-      </a>
-    </li>
-    <li>
-      <a href="#" target="_self" rel='tooltip' 
-        data-slide=5 title='Slide 5'>
-         5
-      </a>
-    </li>
-  </ul>
-  </div>  <!--[if IE]>
-    <script 
-      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
-    </script>
-    <script>CFInstall.check({mode: 'overlay'});</script>
-  <![endif]-->
+<li>Background
+
+<ul>
+<li>course project of &quot;<strong>developing data product</strong>&quot;</li>
+<li>among the specification <strong>Data Science</strong> provided <strong>Cousera</strong></li>
+</ul></li>
+<li>Motivation
+
+<ul>
+<li>Learn to develop R-based application with <strong>Shiny</strong></li>
+<li>Learn to write presentation slides with <strong>Slidify</strong></li>
+<li>Learn to deploy the application on <strong>Shiny Server</strong> and publish the documentation on <strong>Github</strong></li>
+</ul></li>
+</ul>
+
+  </div>
+</section>
+<section class="slide " id="slide-2">
+  <div>
+    <h2>Dataset</h2>
+    <ul>
+<li>Motor Trend Car Road Tests (mtcars)</li>
+</ul>
+
+<pre><code class="r">## list all numeric variables
+names(mtcars)[lapply(mtcars,class)==&quot;numeric&quot;]
+</code></pre>
+
+<p>[1] &quot;mpg&quot;  &quot;cyl&quot;  &quot;disp&quot; &quot;hp&quot;   &quot;drat&quot; &quot;wt&quot;   &quot;qsec&quot; &quot;vs&quot;   &quot;am&quot;   &quot;gear&quot;
+[11] &quot;carb&quot;</p>
+
+  </div>
+</section>
+<section class="slide " id="slide-3">
+  <div>
+    <h2>Input as Predictive Formular</h2>
+    <ul>
+<li>Rules applied in this project
+
+<ul>
+<li><strong>Any one</strong> variable as the &quot;outcome</li>
+<li><strong>Any two other</strong> variables as the &quot;predictors&quot;</li>
+</ul></li>
+<li>Note
+
+<ul>
+<li>Make sure there are all different from each other.</li>
+<li>Otherwise, you got <strong>&quot;Error at input formular&quot;</strong></li>
+</ul></li>
+</ul>
+
+  </div>
+</section>
+<section class="slide " id="slide-4">
+  <div>
+    <h2>Output from Linear Regression Model</h2>
+    <ul>
+<li>Two plots for two variables respectively
+
+<ul>
+<li>Fitted Regression Line against each variable</li>
+<li>Residuals and Standard Error at sample points</li>
+</ul></li>
+<li>Evaluation of Goodness-of-Fit
+
+<ul>
+<li><strong>R<sup>2</sup></strong> is single and strong indicator in statistics</li>
+<li>Value 0 for the worst and 1 for the perfect</li>
+</ul></li>
+</ul>
+
+  </div>
+</section>
+<section class="slide " id="slide-5">
+  <div>
+    <h2>Example Screen Shot</h2>
+    <p><img float="right" src="figures/example.PNG" height=420 width=800 alt="example"></p>
+
+  </div>
+</section>
+  <div class="progress">
+    <div></div>
+  </div>
+	<script src="libraries/frameworks/shower/shower.js"></script>
+	<!-- LOAD HIGHLIGHTER JS FILES -->
+	<script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!-- DONE LOADING HIGHLIGHTER JS FILES -->
+	 
+		<!-- Copyright © 2010–2012 Vadim Makeev — pepelsbey.net -->
+	<!-- Photos by John Carey — fiftyfootshadows.net -->
 </body>
-  <!-- Load Javascripts for Widgets -->
-  
-  <!-- LOAD HIGHLIGHTER JS FILES -->
-  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script>
-  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
-   
-  </html>
+</html>
