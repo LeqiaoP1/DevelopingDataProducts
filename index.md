@@ -14,7 +14,7 @@ knit        : slidify::knit2slides
 ## Introduction
 * Background
   + course project of "__developing data product__"
-  + among the specification __Data Science__ provided __Cousera__
+  + part of specification __Data Science__ provided by __Cousera__
 * Motivation
   + Learn to develop R-based application with __Shiny__
   + Learn to write presentation slides with __Slidify__
@@ -33,20 +33,21 @@ names(mtcars)[lapply(mtcars,class)=="numeric"]
 [11] "carb"
 
 --- 
-## Input as Predictive Formular
+## Input Predictive Formular
 * Rules applied in this project
   + __Any one__ variable as the "outcome
   + __Any two other__ variables as the "predictors"
+  + Click on "Update" button to accept new formular
 * Note
-  + Make sure there are all different from each other.
+  + Syntax check if all variables differ from each other.
   + Otherwise, you got __"Error at input formular"__
 
 ---
-## Output from Linear Regression Model
-* Two plots for two variables respectively
-  + Fitted Regression Line against each variable
+## Output From Linear Regression Model
+* Two term plots for two variables respectively
+  + Fitted Regression (solid-) Line against each variable
   + Residuals and Standard Error at sample points
-* Evaluation of Goodness-of-Fit
+* Evaluation on the Goodness-of-Fit
   + __R^2__ is single and strong indicator in statistics
   + Value 0 for the worst and 1 for the perfect
 
